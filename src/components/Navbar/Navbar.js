@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +7,12 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  arpan:{
+    margin:"10px",
+    fontSize:"15px",
   }
+  
 }));
 
 export default function DenseAppBar() {
@@ -16,12 +21,24 @@ export default function DenseAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar variant="dense">
-          <Typography variant="h6" color="inherit">
-            Photos
+        <Toolbar variant="dense"  >
+          <Typography class={classes.arpan} variant="h6" color="inherit" >
+            HOME |
           </Typography>
+          <Typography class={classes.arpan} variant="h6" color="inherit" >
+              CASES |
+          </Typography>
+          <Typography class={classes.arpan} variant="h6" color="inherit" >
+              VACCINE |
+          </Typography>
+          <Typography class={classes.arpan} variant="h6" color="inherit">
+              REVEIW
+          </Typography>
+
+          
         </Toolbar>
       </AppBar>
+      
     </div>
   );
 }

@@ -7,15 +7,19 @@ function Card({link,title}) {
     
 const useStyles = makeStyles((theme) => ({
     container:{
-        backgroundColor:"grey",
+        backgroundColor:"green",
         height:"250px",
         width:"250px",
-        textAlign: 'center',
-    }
+        padding:"100px 100px 100px 100px",
+        fontsize:"100px",
+        margin:"10px",
+
+    },
+    
   }));
   const classes = useStyles();
     return (
-        <Container className={classes.container}>{title}</Container>
+        <Container style={{fontsize:"100000px"}} className={classes.container}>{title}</Container>
     )
 }
 
