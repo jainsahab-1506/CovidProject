@@ -1,44 +1,39 @@
-import React from 'react';
-import { makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.css'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  arpan:{
-    margin:"10px",
-    fontSize:"15px",
-  }
-  
-}));
-
-export default function DenseAppBar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense"  >
-          <Typography class={classes.arpan} variant="h6" color="inherit" >
-            HOME |
-          </Typography>
-          <Typography class={classes.arpan} variant="h6" color="inherit" >
-              CASES |
-          </Typography>
-          <Typography class={classes.arpan} variant="h6" color="inherit" >
-              VACCINE |
-          </Typography>
-          <Typography class={classes.arpan} variant="h6" color="inherit">
-              REVEIW
-          </Typography>
-
-          
-        </Toolbar>
-      </AppBar>
-      
+ import { NavLink } from 'react-router-dom'
+const Navbar = () => {
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <NavLink className="navbar-brand" to="#">Navbar</NavLink>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav ms-auto">
+        <li className="nav-item">
+          <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/about" className="nav-link">About</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/contact">Contact</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/login">Login</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/signup">Registration</NavLink>
+        </li>
+      </ul>
     </div>
-  );
+  </div>
+</nav>
+</>
+    )
 }
+
+export default Navbar
