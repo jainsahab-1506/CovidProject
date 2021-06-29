@@ -5,5 +5,6 @@ export const requests = {
 
 	doLogin: '/login',
 	doRegister: '/register',
+	addContact:"/contact"
 	
 };

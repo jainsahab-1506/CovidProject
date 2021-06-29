@@ -28,11 +28,12 @@ export default function Login() {
   }
   function HandleSubmit() {
     const credentials = {
-      username: email,
+      email: email,
       password: password,
     };
     async function doLogin() {
       const request = await axios.post(requests["doLogin"], credentials);
+      console.log(request);
       return request;
     }
     doLogin()
@@ -47,6 +48,7 @@ export default function Login() {
       })
       .catch((err) => {
         alert("Something Went Wrong");
+        console.log(err);
         window.location.href = "/login";
       });
   }
