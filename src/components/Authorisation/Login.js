@@ -28,7 +28,7 @@ export default function Login() {
   }
   function HandleSubmit() {
     const credentials = {
-      username: email,
+      email: email,
       password: password,
     };
     async function doLogin() {
