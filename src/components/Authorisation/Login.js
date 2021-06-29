@@ -1,12 +1,12 @@
 
 import React,{useState,useEffect} from 'react'
-import axios from "./utils/axios.js";
-import { requests } from "./utils/requests";
+import axios from "axios";
+import { requests } from "../../utils/requests";
 import { useDispatch } from 'react-redux';
 import {
-  
+    logOutSuccess,
     signInSuccess,
-  } from "../store/modules/auth/auth.action";
+  } from "../../store/modules/auth/auth.action";
   import { useSelector } from "react-redux";
 export default function Login() {
     const dispatch=useDispatch();
@@ -15,7 +15,7 @@ export default function Login() {
     const authToken = useSelector((state) => state.auth.token);
     useEffect(() => {
       if (authToken) {
-       
+        //dispatch(logOutSuccess({}));
         window.location.href = "/about";
       }
     }, []);
@@ -31,21 +31,22 @@ export default function Login() {
     }
     function HandleSubmit(){
         const credentials={
-            username:email,
+            email:email,
             password:password
         }
+        var url="http://localhost:8000"
         async function doLogin(){
-            const request=await axios.post(requests["doLogin"],credentials);
+            const request=await axios.post(url+requests["doLogin"],credentials);
             return request;
         }
         doLogin().then((res)=>{
         console.log(res.data);
-        const {authtoken:token,profile:userinfo}=res.data;
-        dispatch(signInSuccess({ token, userinfo }));
-        alert("Login Done");
-        setemail("")
-        setpassword("")
-        window.location.href = "/about";
+        // const {authtoken:token,profile:userinfo}=res.data;
+        // dispatch(signInSuccess({ token, userinfo }));
+        // alert("Login Done");
+        // setemail("")
+        // setpassword("")
+        // window.location.href = "/about";
       
         })
         .catch((err)=>{
