@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Grid";
+import Home from "./components/Home/Home";
+// import About from "./components/About/Grid";
 import Footer from "./components/Footer/Footer"
 import Contact from "./components/Contact/contact"
 import Login from "./components/Authorisation/Login"
@@ -15,18 +16,21 @@ function App() {
       <Navbar/>
     <Switch>
     
-    <Route   exact path='/' exactcomponent={Home}/>
+    <Route  exact path='/'>
+      <Home />
+    </Route>
     
-{/*     
-    <Route  path='/about'>
+    
+    {/* <Route  path='/about'>
       <About />
-    </Route> */}
+    </Route>  */}
     <Route  path='/contact'>
       <Contact />
     </Route>
     <Route  path='/login'>
       <Login />
     </Route>
+    
     <Route path='/signup'>
       <Signup />
     </Route>

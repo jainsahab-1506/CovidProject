@@ -1,7 +1,8 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from "./Card";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AutoGrid() {
+  const authToken = useSelector((state) => state.auth.token);
+  useEffect(() => {
+    if (!authToken) {
+      // dispatch(logOutSuccess({}));
+      window.location.href = "/login";
+    }
+  }, []);
   const classes = useStyles();
 
   return (

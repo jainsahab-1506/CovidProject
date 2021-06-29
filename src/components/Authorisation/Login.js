@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import { requests } from "../../utils/requests";
 import { useDispatch } from "react-redux";
+import {Link} from 'react-router-dom';
 import {
   logOutSuccess,
   signInSuccess,
 } from "../../store/modules/auth/auth.action";
+//import "./login.css";
 import { useSelector } from "react-redux";
 export default function Login() {
   const dispatch = useDispatch();
@@ -54,6 +56,7 @@ export default function Login() {
   }
   return (
     <div>
+      
       <div className="signup-form">
         <form method="POST">
           <h2>Sign In</h2>
@@ -110,6 +113,85 @@ export default function Login() {
           Don't have an account? <a href="/signup">create an account here</a>
         </div>
       </div>
+    {/*
+
+
+
+    <section className="login">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="login-left">
+                <h4 className="text-capitalize">
+                  Login with your credentials to enjoy the Application services
+                </h4>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="login-right">
+                <h1>Login</h1>
+                <form >
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label htmlFor="Email">Email</label> <br />
+                      <input
+                        type="email"
+                        name="email"
+                        className="input-control"
+                        placeholder="Enter your email"
+                        id="email"
+                        value={email}
+                onChange={HandleChange}
+                        
+                      />
+                      <br />
+                      <span className="text-danger">
+              
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <label htmlFor="Password">Password</label> <br />
+                      <input
+                        type="password"
+                        name="password"
+                        className="input-control"
+                        placeholder="Enter your password"
+                        id="password"
+                        value={password}
+                onChange={HandleChange}
+                      />
+                      <br />
+                      <span className="text-danger">
+                      
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <button type="submit" onClick={HandleSubmit} className="btn btn-primary btn-register">
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <p>
+                        Don't have an account ?
+                        <Link to="/signup" className="text-success">
+                          Create one
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    */}
     </div>
   );
 }

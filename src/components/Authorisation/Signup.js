@@ -3,6 +3,7 @@ import axios from "../../utils/axios.js";
 import { requests } from "../../utils/requests";
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
+//import './login.css'
 import {
 
   signInSuccess,
@@ -65,8 +66,78 @@ export default function Signup() {
    })
   }
     return (
+    //  {/*
+    //     <div>
+    //         <section className="register">
+    //     <div className="container">
+    //       <div className="row">
+    //         <div className="col-lg-6">
+    //           <div className="signup-left">
+    //             <h4 className="text-capitalize">
+    //               To Register With Our Application Signup
+    //             </h4>
+    //           </div>
+    //         </div>
+    //         <div className="col-lg-6">
+    //           <div className="signup-right">
+    //             <h1>Signup</h1>
+    //             <form>
+    //               <div class="form-row">
+    //                 <div class="form-group col-md-12">
+    //                   <label htmlFor="name">Full Name</label> <br />
+    //                   <input
+    //                     type="text"
+    //                     name="username"
+    //                     className="input-control"
+    //                     placeholder="Enter your name"
+    //                     id="name"
+    //                     value={username} 
+    //                     onChange={HandleChange}
+                        
+    //                   />
+    //                   <br />
+                    
+    //                 </div>
+    //               </div>
+    //               <div class="form-row">
+    //                 <div class="form-group col-md-12">
+    //                   <label htmlFor="Email">Email</label> <br />
+    //                   <input
+    //                     type="email"
+    //                     name="email"
+    //                     className="input-control"
+    //                     placeholder="Enter your email"
+    //                     id="email"
+    //                     value={email}
+    //                     onChange={HandleChange}
+    //                   />
+    //                   <br />
+                      
+    //                 </div>
+    //               </div>
+    //               <div class="form-row">
+    //                 <div class="form-group col-md-12">
+    //                   <label htmlFor="phone">Phone</label> <br />
+    //                   <input
+    //                     type="tel"
+    //                     name="phone"
+    //                     className="input-control"
+    //                     placeholder="Enter your phone"
+    //                     id="number"
+    //                     value={phone} 
+    //                     onChange={HandleChange}
+    //                   />{' '}
+    //                   <br />
+                      
+    //                 </div>
+    //               </div>
+    //               <div class="form-row">
+    //                 <div class="form-group col-md-12">
+    //                   <label htmlFor="Password">Password</label>
+    //                   <br />
+
+
      
-        <div>
             <div className="signup-form">
   <form>
     <h2>Sign Up</h2>
@@ -131,7 +202,7 @@ export default function Signup() {
     </div>
   </form>
   <div className="text-center">Already have an account? <Link to="/login">Login Here</Link>/</div>
-</div>
-        </div>
+          </div>
+        
     )
 }
