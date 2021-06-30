@@ -1,11 +1,12 @@
-import React from 'react';
-//import './Home.css';
-import {Link} from 'react-router-dom';
 
-export default function Home() {
-    return (
-        <div>
-             <section>
+import React from "react";
+import {Link} from 'react-router-dom';
+import './Home.css';
+export default function Home(){
+    
+    return(
+    <div>
+        <section >
         <div className="container p-0">
           <div className="row">
             <div className="col-lg-6">
@@ -15,26 +16,36 @@ export default function Home() {
                   <span className="text-uppercase"> COVID </span>
                   Application
                 </h1>
+                <br/>
                 <div className="buttons">
-                <Link
+                  <Link
                     to="/login"
-                    className="btn-primary btn btn-lg btn-outline border-3 btn-login"
+                    className="btn btn-primary btn-lg "
                   >
                     Login
                   </Link>
                   <Link
                     to="/signup"
-                    className="btn-primary btn btn-lg btn-outline border-3 btn-register"
+                    className=" btn btn-primary btn-lg"
                   >
                     Signup
                   </Link>
                 </div>
               </div>
             </div>
-            
+            <div className="col-lg-6">
+              <div className="banner-right">
+                <h1 className="text-capitalize">
+                  <img style={{width:"400px"}}
+                    src="https://media.xconomy.com/wordpress/wp-content/images/2020/06/11121209/planet-earth-as-a-coronavirus-or-sars-covid-cell-3d-rendering-or-picture-id1218821819.jpg"
+                    alt="e"
+                  />
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-        </div>
+    </div>
     )
-}
+} 

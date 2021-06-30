@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import axios from "../../utils/axios.js";
 import { requests } from "../../utils/requests";
 import { useDispatch } from 'react-redux';
-import '../Authorisation/login.css';
 export default function Contact() {
   const [name,setname]= useState("");
   const [phone,setphone]= useState("");
@@ -47,7 +46,7 @@ export default function Contact() {
   }
     return (
             
-        <div className="contact container-xl pt-=md-5">
+        <div className="contact container-xl pt-=md-5" style={{backgroundColor:"#179b81"}}>
 <div className="row">
 <div className="col-md-8 " >
   <div className="contact-form" style={{paddingTop:"100px"}}>

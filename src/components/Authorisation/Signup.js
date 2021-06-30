@@ -3,7 +3,6 @@ import axios from "../../utils/axios.js";
 import { requests } from "../../utils/requests";
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
-//import './login.css'
 import {
 
   signInSuccess,
@@ -56,128 +55,56 @@ export default function Signup() {
      setEmail("")
      setPassword("")
      setPhone("")
-     window.location.href="/about";
+     window.location.href="/login";
      
    })
    .catch((err)=>{
      console.log(err);
      alert('Something went Wrong')
-     window.location.href="/register";
+     window.location.href="/signup";
    })
   }
     return (
-    //  {/*
-    //     <div>
-    //         <section className="register">
-    //     <div className="container">
-    //       <div className="row">
-    //         <div className="col-lg-6">
-    //           <div className="signup-left">
-    //             <h4 className="text-capitalize">
-    //               To Register With Our Application Signup
-    //             </h4>
-    //           </div>
-    //         </div>
-    //         <div className="col-lg-6">
-    //           <div className="signup-right">
-    //             <h1>Signup</h1>
-    //             <form>
-    //               <div class="form-row">
-    //                 <div class="form-group col-md-12">
-    //                   <label htmlFor="name">Full Name</label> <br />
-    //                   <input
-    //                     type="text"
-    //                     name="username"
-    //                     className="input-control"
-    //                     placeholder="Enter your name"
-    //                     id="name"
-    //                     value={username} 
-    //                     onChange={HandleChange}
-                        
-    //                   />
-    //                   <br />
-                    
-    //                 </div>
-    //               </div>
-    //               <div class="form-row">
-    //                 <div class="form-group col-md-12">
-    //                   <label htmlFor="Email">Email</label> <br />
-    //                   <input
-    //                     type="email"
-    //                     name="email"
-    //                     className="input-control"
-    //                     placeholder="Enter your email"
-    //                     id="email"
-    //                     value={email}
-    //                     onChange={HandleChange}
-    //                   />
-    //                   <br />
-                      
-    //                 </div>
-    //               </div>
-    //               <div class="form-row">
-    //                 <div class="form-group col-md-12">
-    //                   <label htmlFor="phone">Phone</label> <br />
-    //                   <input
-    //                     type="tel"
-    //                     name="phone"
-    //                     className="input-control"
-    //                     placeholder="Enter your phone"
-    //                     id="number"
-    //                     value={phone} 
-    //                     onChange={HandleChange}
-    //                   />{' '}
-    //                   <br />
-                      
-    //                 </div>
-    //               </div>
-    //               <div class="form-row">
-    //                 <div class="form-group col-md-12">
-    //                   <label htmlFor="Password">Password</label>
-    //                   <br />
-
-
-     
-            <div className="signup-form">
-  <form>
-    <h2>Sign Up</h2>
-    <p>Please fill in this form to create an account!</p>
-    <hr />
-    <div className="form-group">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text">
-            <span className="fa fa-user" />
-          </span>                    
-        </div>
-        <input type="text" className="form-control" name="name" value={username} onChange={HandleChange} placeholder="name" required="required" />
+      <div className="signup-form">
+       <form>
+     <h2>Sign Up</h2>
+     <p>Please fill in this form to create an account!</p>
+     <hr />
+     <div className="form-group">
+       <div className="input-group">
+         <div className="input-group-prepend">
+           <span className="input-group-text">
+             <span className="fa fa-user" />
+           </span>                    
+         </div>
+         <input type="text" className="form-control" name="name" value={username} onChange={HandleChange} placeholder="name" required="required" />
         
-      </div>
-    </div>
-    <div className="form-group">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text">
-            <i className="fa fa-paper-plane" />
-          </span>                    
-        </div>
-        <input type="email" className="form-control" name="email" value={email} onChange={HandleChange}  placeholder="Email Address" 
+       </div>
+     </div>
+     <div className="form-group">
+       <div className="input-group">
+         <div className="input-group-prepend">
+           <span className="input-group-text">
+             <i className="fa fa-paper-plane" />
+           </span>                    
+         </div>
+         <input type="email" className="form-control" name="email" value={email} onChange={HandleChange}  placeholder="Email Address" 
         
-        required="required" />
-      </div>
-    </div>
-    <div className="form-group">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text">
-            <i className="fa fa-paper-plane" />
-          </span>                    
-        </div>
-        <input type="tel" className="form-control" name="phone" value={phone} onChange={HandleChange}  placeholder="phone" 
+         required="required" />
+       </div>
+     </div>
+     <div className="form-group">
+       <div className="input-group">
+         <div className="input-group-prepend">
+           <span className="input-group-text">
+             <i className="fa fa-paper-plane" />
+           </span>                    
+         </div>
+         <input type="tel" className="form-control" name="phone" value={phone} onChange={HandleChange}  placeholder="phone" 
         
-        required="required" />
-      </div>
-    </div>
+         required="required" />
+       </div>
+     </div>
     
 
     
@@ -196,13 +123,13 @@ export default function Signup() {
     
     
 
-    <div className="form-group">
-      <button type="submit" 
-      className="btn btn-primary btn-lg" onClick={HandleSubmit}>Sign Up</button>
-    </div>
-  </form>
-  <div className="text-center">Already have an account? <Link to="/login">Login Here</Link>/</div>
-          </div>
+     <div className="form-group">
+       <button type="submit" 
+       className="btn btn-primary btn-lg" onClick={HandleSubmit}>Sign Up</button>
+     </div>
+   </form>
+   <div className="text-center">Already have an account? <Link to="/login">log in</Link></div>
+           </div>
         
     )
 }

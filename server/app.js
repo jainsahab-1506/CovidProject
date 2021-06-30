@@ -7,7 +7,7 @@ const cors=require('cors');
 const AuthRouter=require("./authorization/Routes");
 app.use(bodyparser.urlencoded({extended:true}))
 
-  mongoose.connect("mongodb+srv://arpanjain:"+process.env.CLUSTER_PASSWORD+ "@cluster0.zezkw.mongodb.net/mernstack?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://arpanjain:"+process.env.CLUSTER_PASSWORD+ "@cluster0.zezkw.mongodb.net/mernstack?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true })
  app.use(
     cors({
       origin: process.env.SITE_URL,
@@ -20,6 +20,6 @@ app.use(bodyparser.urlencoded({extended:true}))
     res.send("Hello")
   })
   app.use("/",AuthRouter);
-app.listen(8000,function(req,res){
+app.listen(4000,function(req,res){
   console.log("Running")
 })

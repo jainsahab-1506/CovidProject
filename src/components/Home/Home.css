@@ -1,16 +1,3 @@
-
-
-#banner::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
-}
-
 .banner-left,
 .banner-right {
     display: flex;
@@ -23,9 +10,24 @@
     z-index: 2;
 }
 
+.banner-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
 
+.banner-right h1 {
+    font-size: 5rem;
+}
 
-
+.banner-right h1 img {
+    width: 5rem;
+}
 
 .banner-left h1 {
     font-weight: bolder;
@@ -33,10 +35,11 @@
 
 .buttons .btn {
     padding: 10px 35px;
-    margin: 50px 20px 0px 0px ;
+    margin: 20px 20px 20px 20px ;
 }
 
 .buttons .btn-github {
     background-color: bisque;
+    margin: 10px;
     color: #000000 ;
 }
