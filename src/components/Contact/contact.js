@@ -52,7 +52,7 @@ export default function Contact() {
   <div className="contact-form" style={{paddingTop:"100px"}}>
     <h1>Contact Us</h1>
     <p className="hint-text">We'd love to hear from you, please drop us a line if you've any query.</p>
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form  method="post">
       <div className="row">
         <div className="col-sm-6">
           <div className="form-group">

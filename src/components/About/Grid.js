@@ -3,12 +3,14 @@
 //import Card from "./Card";
 import "./Grid.css";
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import { useSelector,useDispatch } from "react-redux";
+import axios from "../../utils/axios";
 import {requests} from "../../utils/requests";
 import { Link } from 'react-router-dom';
+import {
 
-
+  signInSuccess,
+} from "../../store/modules/auth/auth.action";
 // const useStyles = makeStyles((theme) => ({
 //   root: {
 //     flexGrow: 1,
@@ -29,35 +31,60 @@ import { Link } from 'react-router-dom';
 
 export default function AutoGrid() {
   //const classes = useStyles();
-
+  const dispatch=useDispatch();
 
   const authToken = useSelector((state) => state.auth.token);
   const [fetchdata,setfetchdata]=useState("");
+    const getdata=async()=>{
+      try{
+        const resp=await axios.get(requests["getData"]);
+        console.log(resp.data);
+         setfetchdata(resp.data);    
+      }
+      catch(err){
+        setfetchdata({});
+        console.log(err);
+      }
+    }
     useEffect(() => {
         if (!authToken) {
           // dispatch(logOutSuccess({}));
           window.location.href = "/login";
         }
-        async function fetchData() {
-          const request = await axios.get(requests["getData"]);
-         
+        getdata();
+        
+            }, []);
+    
+      function handleSubscribe() {
+        async function doSubscribe() {
+          const request = await axios.put(requests["subscribe"]);
+          console.log(request);
           return request;
         }
-        fetchData()
-        .then((res) => {
-          setfetchdata(res.data);
-        })
-        .catch((e) => {
-          setfetchdata({});
-        });
-    
+        doSubscribe()
+          .then((res) => {
+            console.log(res.data);
+            const {profile: userinfo } = res.data;
+            dispatch(signInSuccess({ authToken, userinfo }));
+            alert("Done");
+           
+          
+          })
+          .catch((err) => {
+            alert("Something Went Wrong");
+            console.log(err);
+            window.location.href = "/";
+          });
+      }
 
-        
-      }, []);
-    
+
+
+      
+
       if (fetchdata===""){
         return <div></div>;
       }
+      console.log(fetchdata);
     
   return (
 <section>
@@ -76,39 +103,40 @@ export default function AutoGrid() {
           <div className="text-wrap vcenter">
       
             <h6 class="mbr-fonts-style text1 mbr-text display-7">.......TOTAL VACCINATED.....</h6>
-            <h2>{fetchdata.tested[fetchdata.tested.length-1]['registration18-45years']}</h2>
+            <h2>{fetchdata.tested[fetchdata.tested.length-1]['totaldosesadministered']}</h2>
            </div>
         </div>
       </div>
       <div className="col-lg-6 mbr-col-md-10">
         <div className="wrap">
           <div className="text-wrap vcenter">
-            <h6 class="mbr-fonts-style text1 mbr-text display-7">TOTAL CASES IN INDIA</h6>
-            <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link>
+            <h6 class="mbr-fonts-style text1 mbr-text display-7">NEWS/ARTICLES</h6>
+            <Link to="/news"><h2>SHARE HERE</h2></Link>
            </div>
         </div>
       </div>
       <div className="col-lg-6 mbr-col-md-10">
         <div className="wrap">
           <div className="text-wrap vcenter">
-            <h6 class="mbr-fonts-style text1 mbr-text display-7">TOTAL CASES IN INDIA</h6>
-            <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link>
+            <h6 class="mbr-fonts-style text1 mbr-text display-7">NEED HELP</h6>
+            <Link to="/help"><h2>SEARCH HERE</h2></Link>
            </div>
         </div>
       </div>
       <div className="col-lg-6 mbr-col-md-10">
         <div className="wrap">
           <div className="text-wrap vcenter">
-            <h6 class="mbr-fonts-style text1 mbr-text display-7">TOTAL CASES IN INDIA</h6>
-            <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link>
+            <h6 class="mbr-fonts-style text1 mbr-text display-7">SUBSCRIBE TO OUR NEWS LETTER</h6>
+            <h2 onClick={handleSubscribe}>SUBSCRIBE HERE</h2>
            </div>
         </div>
       </div>
       <div className="col-lg-6 mbr-col-md-10">
         <div className="wrap">
           <div className="text-wrap vcenter">
-            <h6 class="mbr-fonts-style text1 mbr-text display-7">TOTAL CASES IN INDIA</h6>
-            <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link>
+          <h6 class="mbr-fonts-style text1 mbr-text display-7">WANNA A KNOW SOMETHING</h6>
+            <Link to="/contact"><h2>CONTACT HERE</h2></Link>
+            <h6> </h6>
            </div>
         </div>
       </div>

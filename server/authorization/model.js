@@ -17,6 +17,10 @@ const userSchema=mongoose.Schema(
         password:{
             type: String,
             required:true
+        },
+        subscribe:{
+            type:Boolean,
+            default:false,
         }
     }
 )
