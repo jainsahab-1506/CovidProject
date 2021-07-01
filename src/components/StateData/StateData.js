@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-
+import './State.css';
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -26,44 +26,37 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
+
 export default function StateData(props) {
-    const classes = useStyles();
    return(
     <>
-        <TableContainer component={Paper} class="w-50 m-auto">
-          <Table className={classes.table} aria-label="customized table">
-            <TableHead>
+        <TableContainer component={Paper}  >
+          <Table>
+            <TableBody >
               <TableRow>
                 <StyledTableCell align="center">STATE</StyledTableCell>
                 <StyledTableCell align="center">CONFIRMED</StyledTableCell>
                 <StyledTableCell align="center">RECOVERED</StyledTableCell>
                 <StyledTableCell align="center">ACTIVE</StyledTableCell>
                 <StyledTableCell align="center">DEATHS</StyledTableCell>
-
               </TableRow>
-            </TableHead>
-            <TableBody>
+            </TableBody>
+            <TableBody  className="table">
               {props.statedata.map((data, index) => (
-                
                 <StyledTableRow key={index}>
-                  <StyledTableCell align="center" component="th" scope="row">
+                  <StyledTableCell  align="center">
                     {data.state}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
+                  <StyledTableCell  align="center">
                     {data.confirmed}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
+                  <StyledTableCell  align="center">
                     {data.recovered}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
+                  <StyledTableCell  align="center">
                     {data.active}
                   </StyledTableCell>
-                  <StyledTableCell align="center">
+                  <StyledTableCell  align="center">
                     {data.deaths}
                   </StyledTableCell>
                 </StyledTableRow>
