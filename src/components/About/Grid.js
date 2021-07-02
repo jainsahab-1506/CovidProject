@@ -1,6 +1,6 @@
-//import { makeStyles } from '@material-ui/core/styles';
-//import Grid from '@material-ui/core/Grid';
-//import Card from "./Card";
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Card from "./Card";
 import "./Grid.css";
 import React, { useState, useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
@@ -11,23 +11,23 @@ import {
 
   signInSuccess,
 } from "../../store/modules/auth/auth.action";
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   container:{
-//       backgroundColor:"grey",
-//       height:"250px",
-//       width:"250px",
-//       textAlign: 'center',
-//   },
-//   Grid:{
-//     padding:"20px",
-//     margin:"10px 10px 10px 10px",
-//   },
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  container:{
+      backgroundColor:"grey",
+      height:"250px",
+      width:"250px",
+      textAlign: 'center',
+  },
+  Grid:{
+    padding:"20px",
+    margin:"10px 10px 10px 10px",
+  },
   
 
-// }));
+}));
 
 export default function AutoGrid() {
   //const classes = useStyles();
@@ -38,7 +38,7 @@ export default function AutoGrid() {
     const getdata=async()=>{
       try{
         const resp=await axios.get(requests["getData"]);
-        console.log(resp.data);
+        console.log(resp);
          setfetchdata(resp.data);    
       }
       catch(err){
@@ -94,7 +94,7 @@ export default function AutoGrid() {
         <div className="wrap">
           <div className="text-wrap vcenter">
             <h6 class="mbr-fonts-style text1 mbr-text display-7">TOTAL CASES IN INDIA</h6>
-            <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link>
+            {/* <Link to="/statepage"><h2>{fetchdata.statewise[0].confirmed}</h2></Link> */}
            </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function AutoGrid() {
           <div className="text-wrap vcenter">
       
             <h6 class="mbr-fonts-style text1 mbr-text display-7">.......TOTAL VACCINATED.....</h6>
-            <h2>{fetchdata.tested[fetchdata.tested.length-1]['totaldosesadministered']}</h2>
+            {/* <h2>{fetchdata.tested[fetchdata.tested.length-1]['totaldosesadministered']}</h2> */}
            </div>
         </div>
       </div>
