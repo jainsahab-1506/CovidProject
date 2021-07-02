@@ -8,5 +8,7 @@ export const requests = {
 	addContact:"/contact",
 	NewsArticle:"/NewsArticle",
 	getData:"https://api.covid19india.org/data.json",
-	subscribe:"/subscribe"
+	subscribe:"/subscribe",
+	getPostData:"/post",
+	createNewPost:"/post"
 };

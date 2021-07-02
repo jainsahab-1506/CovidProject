@@ -1,7 +1,7 @@
-const Post = require("./../PostSchema");
+const Post = require("../PostSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const User=require("./../model")
+const User=require("../model")
 const  moment  = require("moment");
 const createpost=async (req,res)=>{
     try{
