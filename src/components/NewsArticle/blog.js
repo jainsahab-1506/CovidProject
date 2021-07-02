@@ -16,5 +16,4 @@ const blog = (props) => {
         </div>
     )
 }
-
 export default blog
