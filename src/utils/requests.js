@@ -6,6 +6,7 @@ export const requests = {
 	doLogin: '/login',
 	doRegister: '/register',
 	addContact:"/contact",
+	NewsArticle:"/NewsArticle",
 	getData:"https://api.covid19india.org/data.json",
 	subscribe:"/subscribe"
 };

@@ -112,7 +112,7 @@ export default function AutoGrid() {
         <div className="wrap">
           <div className="text-wrap vcenter">
             <h6 class="mbr-fonts-style text1 mbr-text display-7">NEWS/ARTICLES</h6>
-            <Link to="/news"><h2>SHARE HERE</h2></Link>
+            <Link to="/NewsArticle"><h2>SHARE HERE</h2></Link>
            </div>
         </div>
       </div>

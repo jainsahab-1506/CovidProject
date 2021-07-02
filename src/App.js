@@ -8,6 +8,8 @@ import Signup from "./components/Authorisation/Signup"
 import ErrorPage from "./components/Error/Error"
 import StatePage from "./components/StateData/StatePage"
 import {BrowserRouter as Router ,Route,Switch} from 'react-router-dom';
+import NewsArticle from "./components/NewsArticle/NewsArticle";
+import Post from './components/NewsArticle/post';
 import './index.css';
 function App() {
   return (
@@ -25,8 +27,14 @@ function App() {
      <Route  exact path='/about'>
       <About />
     </Route>  
+    <Route  exact path='/post'>
+      <Post />
+    </Route>
     <Route  exact path='/contact'>
       <Contact />
+    </Route>
+    <Route  exact path='/NewsArticle'>
+      <NewsArticle />
     </Route>
     <Route  exact path='/login'>
       <Login />
