@@ -20,6 +20,7 @@ const getpost=async (req,res)=>{
         }
         tokenData = jwt.decode(tokenData);
         const postdata=await Post.find({}).populate("ownerid");
+        postdata.reverse();
         return res.status(200).json(postdata);
     }
     catch(err)

@@ -10,5 +10,12 @@ export const requests = {
 	getData:"https://api.covid19india.org/data.json",
 	subscribe:"/subscribe",
 	getPostData:"/post",
-	createNewPost:"/post"
+	createNewPost:"/post",
+	getFinanceData:"/GetFinance",
+	CreateFinancePost:"/FinancePost",
+	getMentalData:"/GetMental",
+	CreateMentalPost:"/MentalPost",
+	getMedicalData:"/GetMedical",
+	CreateMedicalPost:"/MedicalPost"
+
 };

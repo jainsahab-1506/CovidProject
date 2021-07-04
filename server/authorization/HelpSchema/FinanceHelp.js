@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
-const User=require("./model");
-const postSchema=mongoose.Schema(
+const User=require("../model");
+const FinanceHelp=mongoose.Schema(
     {
       
         message:{
@@ -17,6 +17,6 @@ const postSchema=mongoose.Schema(
         }
     }
 )
-const Post=mongoose.model('Post', postSchema);
+const Finance=mongoose.model('Financehelp', FinanceHelp);
 
-module.exports=Post;
+module.exports=Finance;

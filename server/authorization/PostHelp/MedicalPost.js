@@ -1,4 +1,4 @@
-const Post = require("../PostSchema");
+const Post = require("../HelpSchema/MedicalHelp");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User=require("../model")

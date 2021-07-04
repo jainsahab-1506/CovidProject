@@ -1,14 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import Blog from './blog.js'
-import "../About/Grid.css";
+import Blog from './FinanceBlog.js'
+import "../../About/Grid.css";
 import { Link } from 'react-router-dom';
-import axios from "../../utils/axios.js";
-import { requests } from "../../utils/requests";
+import axios from "../../../utils/axios.js";
+import { requests } from "../../../utils/requests.js";
 const NewsArticle = () => {
     const [postData,setPostData] = useState([]);
     const getpostdata=async ()=>{
         try{
-            const postdata=await axios.get(requests["getPostData"]);
+            const postdata=await axios.get(requests["getFinanceData"]);
             console.log(postdata.data);
             setPostData(postdata.data);
         }
@@ -29,7 +29,7 @@ const NewsArticle = () => {
                 <div className="wrap">
                     <div className="text-wrap vcenter">
                         <h6 className="mbr-fonts-style text1 mbr-text display-7">WANNA WRITE SOMETHING</h6>
-                        <Link to="/post"><h2>Write Here</h2></Link>
+                        <Link to="/FinancePost"><h2>Write Here</h2></Link>
                     </div>
                 </div>
             </div>
