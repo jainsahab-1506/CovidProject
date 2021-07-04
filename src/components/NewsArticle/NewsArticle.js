@@ -34,7 +34,7 @@ const NewsArticle = () => {
                 </div>
             </div>
             {
-                postData.map((post,index) => <Blog key={index} name={post.ownerid.username} email={post.ownerid.email} message={post.message} date={post.Date}/>)  
+                postData?postData.map((post,index) => <Blog key={index} name={post.ownerid.username} email={post.ownerid.email} message={post.message} date={post.Date}/>):""  
             }
         </div>
         

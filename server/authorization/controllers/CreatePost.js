@@ -1,8 +1,12 @@
 const Post = require("../PostSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const sgMail = require('@sendgrid/mail')
 const User=require("../model")
 const  moment  = require("moment");
+sgMail.setApiKey(process.env.EmailAPI);
+
+
 const createpost=async (req,res)=>{
     try{
         const authHeader = req.headers.authorization;
@@ -21,7 +25,6 @@ const createpost=async (req,res)=>{
         tokenData = jwt.decode(tokenData);
         
         const user =await User.findById(tokenData._id);
-        console.log(tokenData);
         if(!user){
             return res.status(400).json({error:"Invalid Token"});
         }
@@ -31,7 +34,27 @@ const createpost=async (req,res)=>{
             message,Date:date,ownerid:user._id
         })
         await post.save();
-        console.log(post.Date);
+        if(user.admin)
+        {
+          const allUser = await User.find({subscribe:true});
+          console.log(allUser);
+          allUser.forEach(async (element) => {
+            try{
+              const msg = {
+                to: element.email,
+                from: "raghavbhandari3@gmail.com",
+                subject: "Welcome to the covid community",
+                html: `<h1>${message}</h1>`
+                }
+                await sgMail.send(msg)
+                console.log("Email sent");
+            }
+            catch(err)
+            {
+              console.log(err);
+            }
+          });
+        }
         return res.status(200).json(post);
     }
     catch(err)
