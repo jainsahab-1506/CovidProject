@@ -18,20 +18,20 @@ const Blog = (props) => {
       window.location.href = "/NewsArticle";
     }
   };
-  // const handleEdit= async()=>{
-  //     try{
-  //         const res = await axios.delete(requests["editPost"]+"/"+props.id,{id:props.id});
-  //         alert("Successfully deleted");
-  //         window.location.href="/NewsArticle";
-  //       }
-  //       catch(err)
-  //       {
-  //         console.log(err);
-  //         alert('Something went Wrong')
-  //         window.location.href="/NewsArticle";
-  //       }
-
-  // }
+  const handleEdit = async () => {
+    window.location.href = "/post/" + props.id;
+    //   try{
+    //       const res = await axios.delete(requests["editPost"]+"/"+props.id,{id:props.id});
+    //       alert("Successfully deleted");
+    //       window.location.href="/NewsArticle";
+    //     }
+    //     catch(err)
+    //     {
+    //       console.log(err);
+    //       alert('Something went Wrong')
+    //       window.location.href="/NewsArticle";
+    //     }
+  };
   return (
     <div>
       <div className="mbr-col-md-10">
@@ -56,7 +56,7 @@ const Blog = (props) => {
             <div></div>
           )}
           {props.ownerid.toString() === props.userid.toString() ? (
-            <EditIcon onClick={handleDelete} />
+            <EditIcon onClick={handleEdit} />
           ) : (
             <div></div>
           )}

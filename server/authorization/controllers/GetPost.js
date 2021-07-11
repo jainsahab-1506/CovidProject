@@ -21,7 +21,7 @@ const getpost = async (req, res) => {
     tokenData = jwt.decode(tokenData);
     if (req.params.id) {
       const post = await Post.findOne({ _id: req.params.id });
-      return res.status(200).json(postdata);
+      return res.status(200).json(post);
     } else {
       const postdata = await Post.find({}).populate("ownerid");
       postdata.reverse();

@@ -19,7 +19,7 @@ router.post("/register", register);
 router.post("/login", login);
 router.post("/contact", contact);
 router.post("/post", post);
-router.get("/post/?:id", getPost);
+router.get("/post/:id?", getPost);
 router.delete("/post/:id", deletePost);
 router.put("/post/:id", editPost);
 
