@@ -20,7 +20,6 @@ const subscribe = async (req, res) => {
     tokenData = jwt.decode(tokenData);
     console.log(tokenData);
     const user = await User.findById(tokenData._id);
-    console.log(tokenData);
     if (!user) {
       return res.status(400).json({ error: "Invalid Token" });
     }

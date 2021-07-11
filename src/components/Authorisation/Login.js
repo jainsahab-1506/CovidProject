@@ -20,7 +20,7 @@ export default function Login() {
     }
   }, []);
   function HandleChange(e) {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     if (name === "email") {
       setemail(value);
     } else {

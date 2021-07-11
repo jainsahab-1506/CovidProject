@@ -4,10 +4,8 @@ import { requests } from "../../utils/requests";
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {
-
   signInSuccess,
 } from "../../store/modules/auth/auth.action";
-
 
 export default function Signup() {
   const dispatch=useDispatch();

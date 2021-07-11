@@ -70,10 +70,6 @@ function App() {
     <Route exact path='/MentalPost'>
         <MentalPost />
     </Route>
-
-
-
-
     <Route >
       <ErrorPage/>
     </Route>

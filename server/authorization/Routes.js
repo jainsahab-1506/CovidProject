@@ -23,9 +23,15 @@ router.get("/post/?:id", getPost);
 router.delete("/post/:id", deletePost);
 router.put("/post/:id", editPost);
 
-router.put("/subscribe", subscribe);
-router.post("/FinancePost", FinancePost);
-router.get("/GetFinance", GetFinance);
+router.post("/register",register);
+router.post('/login',login);
+router.post("/contact",contact);
+router.post("/post",post);//create
+router.get("/post",getPost);//call
+router.put("/subscribe",subscribe);//update
+
+router.post("/FinancePost",FinancePost);
+router.get("/GetFinance",GetFinance);
 
 router.post("/MedicalPost", MedicalPost);
 router.get("/GetMedical", GetMedical);

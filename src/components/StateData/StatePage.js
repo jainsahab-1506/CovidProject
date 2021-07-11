@@ -25,7 +25,6 @@ export default function StatePage() {
         if(fetchdata===""){
             return <div></div>
         }
-        
     return (
         <div>
             <StateData

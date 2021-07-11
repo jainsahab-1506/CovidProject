@@ -14,7 +14,7 @@ const login=async (req,res)=>{
         }
         const valid =await bcrypt.compare(password,user.password);
         if(valid)
-        {
+        {//header payload signature 
             const token = jwt.sign({_id:user._id},process.env.TOKEN_SECRET);
             return res.status(200).json({authtoken:token,profile:user});
         }

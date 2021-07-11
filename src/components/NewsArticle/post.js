@@ -29,12 +29,15 @@ export default function Contact() {
       alert("Something went Wrong");
       window.location.href = "/post";
     }
-  };
-  return (
-    <div
-      className="contact container-xl pt-=md-5"
-      style={{ backgroundColor: "#179b81" }}
-    >
+  }
+    return (
+        <div className="contact container-xl pt-=md-5" style={{backgroundColor:"#179b81"}}>
+<div className="row">
+<div className="col-md-8 " >
+  <div className="contact-form" style={{paddingTop:"100px"}}>
+    <h1>SHARE WITH OTHERS</h1>
+    <p className="hint-text">SHARE EXPERIENCE ,NEWS,ARTICLE HERE</p>
+    <form  method="post">
       <div className="row">
         <div className="col-md-8 ">
           <div className="contact-form" style={{ paddingTop: "100px" }}>

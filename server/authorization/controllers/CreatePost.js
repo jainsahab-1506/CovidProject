@@ -1,10 +1,9 @@
 const Post = require("../PostSchema");
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const sgMail = require('@sendgrid/mail')
 const User=require("../model")
 const  moment  = require("moment");
-sgMail.setApiKey(process.env.EmailAPI);
+sgMail.setApiKey(process.env.EmailAPI);//
 
 
 const createpost=async (req,res)=>{
@@ -16,7 +15,6 @@ const createpost=async (req,res)=>{
           });
         }
         var tokenData = authHeader.split(" ")[1];
-       
         if (!tokenData) {
           return res.status(400).json({
             error: "Invalid token.",
@@ -29,7 +27,7 @@ const createpost=async (req,res)=>{
             return res.status(400).json({error:"Invalid Token"});
         }
         const {message}=req.body;
-        var date = moment().format("dddd, MMMM Do YYYY, h:mm a");;  
+        var date = moment().format("dddd, MMMM Do YYYY, h:mm a");  
         const post=new Post({
             message,Date:date,ownerid:user._id
         })
