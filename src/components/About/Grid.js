@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Card from "./Card";
+// import Grid from '@material-ui/core/Grid';
+// import Card from "./Card";
 import "./Grid.css";
 import React, { useState, useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
@@ -47,6 +47,7 @@ export default function AutoGrid() {
         console.log(err);
       }
     }
+
     useEffect(() => {
         if (!token) {
           // dispatch(logOutSuccess({}));
@@ -147,31 +148,7 @@ export default function AutoGrid() {
 
 
 
-    // <div className={classes.root} >
-    //   <Grid   container spacing={2}>
-    //     <Grid  item lg>
-    //       {/* <h1 onClick={()=>console.log(fetchdata)}>India</h1> */}
-    //    <Link to="/statepage"><Card  title={`India ${fetchdata.statewise[0].confirmed}`}/></Link>
-
-    //     </Grid>
-    //     <Grid  item lg>
-    //         <Card title="raghav"/>
-    //     </Grid>
-    //     <Grid  item lg>
-    //       <Card title="raghav"/>
-    //     </Grid>
-    //   </Grid>
-    //   <Grid container spacing={2}>
-    //     <Grid  item xs>
-    //         <Card title={`Vaccination Above18 Years: ${fetchdata.tested[fetchdata.tested.length-1]['registration18-45years']} Above 45 Years:${fetchdata.tested[fetchdata.tested.length-1].registrationabove45years}`}/>
-    //     </Grid>
-    //     <Grid item xs>
-    //         <Card title="raghav"/>
-    //     </Grid>
-    //     <Grid item xs>
-    //         <Card title="raghav"/>
-    //     </Grid>
-    //   </Grid>
+    
     
   );
 }

@@ -1,9 +1,10 @@
 
 import React from "react";
 import {Link} from 'react-router-dom';
+import { useSelector,useDispatch } from "react-redux";
 import './Home.css';
 export default function Home(){
-    
+  const token = useSelector((state) => state.auth.token);
     return(
     <div>
         <section >
@@ -17,6 +18,8 @@ export default function Home(){
                   Application
                 </h1>
                 <br/>
+                {
+                  (!token)?
                 <div className="buttons">
                   <Link
                     to="/login"
@@ -30,7 +33,8 @@ export default function Home(){
                   >
                     Signup
                   </Link>
-                </div>
+                </div>:<div></div>
+}
               </div>
             </div>
             <div className="col-lg-6">
