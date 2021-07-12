@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
-import axios1 from "axios";
 import { requests } from "../../utils/requests";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -28,12 +27,16 @@ export default function Login() {
       setpassword(value);
     }
   }
-  function HandleSubmit() {
+  function HandleSubmit(e) {
+    e.preventDefault();
     const credentials = {
       email: email,
       password: password,
     };
+    console.log("Called");
+
     async function doLogin() {
+      console.log(axios.baseURL);
       const request = await axios.post(requests["doLogin"], credentials);
       console.log(request);
       return request;
@@ -57,7 +60,7 @@ export default function Login() {
   return (
     <div>
       <div className="signup-form">
-        <form method="POST">
+        <form method="POST" onSubmit={HandleSubmit}>
           <h2>Sign In</h2>
           <p>Please fill in this form to LOGIN!</p>
           <hr />
@@ -99,11 +102,7 @@ export default function Login() {
           </div>
 
           <div className="form-group">
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg"
-              onClick={HandleSubmit}
-            >
+            <button className="btn btn-primary btn-lg" type="submit">
               LOG IN
             </button>
           </div>

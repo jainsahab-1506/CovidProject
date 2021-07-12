@@ -2,7 +2,7 @@ import axios from "axios";
 import { SITE_URL, SERVER_URL } from "./requests";
 import Session from "../service/session";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
-
+console.log(SERVER_URL);
 var instance = axios.create({
   baseURL: SERVER_URL,
 });
