@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
+import axios1 from "axios";
 import { requests } from "../../utils/requests";
 import { useDispatch } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   logOutSuccess,
   signInSuccess,
@@ -20,7 +21,7 @@ export default function Login() {
     }
   }, []);
   function HandleChange(e) {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     if (name === "email") {
       setemail(value);
     } else {
@@ -55,7 +56,6 @@ export default function Login() {
   }
   return (
     <div>
-      
       <div className="signup-form">
         <form method="POST">
           <h2>Sign In</h2>

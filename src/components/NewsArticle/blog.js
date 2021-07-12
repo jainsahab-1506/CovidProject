@@ -23,14 +23,12 @@ const Blog = (props) => {
   };
   return (
     <div>
-      
-                        
-                    
-        <div style={{marginLeft:"400px"}}class="inline row">
-        <div className="inline wrap col-md-8">
-          <div className=" inline text-wrap ">
-          <div><i class="fa fa-calendar-o"></i><span class="ml-2">Date:{props.date}</span></div>
-            
+      <div className="mbr-col-md-10">
+        <div className="wrap">
+          <div className="text-wrap ">
+            <h6 className="mbr-fonts-style text1 mbr-text display-7">
+              Date:{props.date}
+            </h6>
             <h6 className="mbr-fonts-style text1 mbr-text display-7">
               Name:{props.name}
             </h6>
@@ -38,7 +36,6 @@ const Blog = (props) => {
               Email:{props.email}
             </h6>
             <h5 class="mt-2"> News/Article:{props.message}</h5>
-            
           </div>
           {props.ownerid.toString() === props.userid.toString() ? (
             <DeleteOutlineIcon onClick={handleDelete} />

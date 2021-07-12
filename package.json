@@ -2,6 +2,7 @@
   "name": "covid",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://covid-backend-mnit.herokuapp.com/",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -51,8 +52,9 @@
   },
   "react-dotenv": {
     "whitelist": [
-      "REACT_APP_SERVER_URL",
-      "REACT_APP_SITE_URL"
+      "REACT_APP_SITE_URL",
+      "REACT_APP_SERVER_URL"
+      
     ]
   }
 }
